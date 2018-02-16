@@ -15,10 +15,30 @@ def index():
 def quantitative():
     return render_template('quantitative.html')
 
-@app.route('/qualitative')
+@app.route('/categorical')
 @nocache
-def qualitative():
-    return render_template('qualitative.html')
+def categorical():
+    return render_template('categorical.html')
+
+@app.route('/nominal')
+@nocache
+def nominal():
+    return render_template('nominal.html')
+
+@app.route('/ordinal')
+@nocache
+def ordinal():
+    return render_template('ordinal.html')
+
+@app.route('/continuous')
+@nocache
+def continuous():
+    return render_template('continuous.html')
+
+@app.route('/discrete')
+@nocache
+def discrete():
+    return render_template('discrete.html')
 
 @app.route('/about')
 @nocache
