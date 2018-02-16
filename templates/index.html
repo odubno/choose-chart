@@ -20,17 +20,17 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
-
-    <div class="text-center container4">
+    <center>
         <form action="{{ url_for('quantitative') }}">
             <button class="btn btn-primary btn-lg">Quantitative Data</button>
+            <p>Data That Is Expressed As A Number.</p>
         </form>
-    </div>
-
-    <div class="text-center container4">
+        <br>
+        <br>
         <form action="{{ url_for('qualitative') }}">
-            <button class="btn btn-primary btn-lg">Qualitative Data</button>
+            <button class="btn btn-primary btn-lg" >Qualitative Data</button>
+            <p>Data That Cannot Be Expressed As A Number.</p>
         </form>
-    </div>
+    </center>
 
 {% endblock %}

@@ -20,12 +20,14 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
-
-    <div class="text-center container4">
+    <center>
+        <h4>Learn which charts are best for your data.</h4>
+    </center>
+    <br><br>
+    <div class="fixed-bottom text-center">
         <form action="{{ url_for('index') }}">
             <button class="btn btn-primary btn-lg">Back To Charts</button>
         </form>
     </div>
-
 
 {% endblock %}
