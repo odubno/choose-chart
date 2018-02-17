@@ -23,18 +23,14 @@
     <center>
         <div class="sides">
             <div class="left">
-                <form action="templates/ordinal.html">
-                    <a action="{{ url_for('ordinal') }}">
-                        <img src="static/img/nominal.png" alt="quantitative" height="130" width="180">
-                    </a>
+                <img src="static/img/nominal.png" alt="quantitative" height="130" width="180">
+                <form action="{{ url_for('nominal') }}">
                     <button class="btn btn-primary btn-lg">Nominal Data</button>
                 </form>
             </div>
             <br>
             <div class="right">
-                <a action="templates/ordinal.html">
-                    <img src="static/img/ordinal.png" alt="quantitative" height="130" width="180">
-                </a>
+                <img src="static/img/ordinal.png" alt="quantitative" height="130" width="180">
                 <form action="{{ url_for('ordinal') }}">
                     <button class="btn btn-primary btn-lg">Ordinal Data</button>
                 </form>

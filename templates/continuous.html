@@ -17,7 +17,34 @@
 
 <!-- Content -->
 {% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
-    <h1> Continuous Data </h1>
-
+	<center>
+		<h1>Continuous</h1>
+		<div class="sides">
+			<div class="left">
+				<h2>Single Variable</h2>
+				<h5>Histogram</h5>
+				<h5>Density Plot</h5>
+				<h5>Box Plots</h5>
+			</div>
+			<div class="center">
+				<h2>Two Variables</h2>
+				<h5>Scatter Plot</h5>
+				<h5>Bar Plots</h5>
+			</div>
+			<div class="right">
+				<h2>Multivariable</h2>
+				<h5>Parallel Coordinate</h5>
+				<h5>Mosaic Plot</h5>
+				<h5>Scatter Plot Matrix</h5>
+				<h5>3-D Scatter Plot</h5>
+			</div>
+		</div>
+		<div>
+			<form action="{{ url_for('quantitative') }}">
+				<button class="btn btn-primary btn-lg">Back</button>
+			</form>
+		</div>
+	</center>
 {% endblock %}

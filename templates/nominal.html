@@ -17,5 +17,19 @@
 
 <!-- Content -->
 {% block content %}
-    <h1>Nominal Data</h1>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+	<center>
+		<h1>Nominal</h1>
+
+		<h5>Histogram</h5>
+		<h5>Parallel Coordinate</h5>
+		<h5>Mosaic Plot</h5>
+
+		<div>
+			<form action="{{ url_for('categorical') }}">
+				<button class="btn btn-primary btn-lg">Back</button>
+			</form>
+		</div>
+	</center>
 {% endblock %}

@@ -17,7 +17,19 @@
 
 <!-- Content -->
 {% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
-    <h1> Ordinal Data </h1>
+	<center>
+		<h1>Ordinal</h1>
 
+		<h5>Histogram</h5>
+		<h5>Parallel Coordinate</h5>
+		<h5>Mosaic Plot</h5>
+
+		<div>
+			<form action="{{ url_for('categorical') }}">
+				<button class="btn btn-primary btn-lg">Back</button>
+			</form>
+		</div>
+	</center>
 {% endblock %}

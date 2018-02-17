@@ -24,7 +24,7 @@
     display: inline-block;
     border-radius: 3px;
     width: 200px;
-    height: 50px;
+    height: 200px;
     text-align: left;
 }
 
@@ -32,6 +32,13 @@
     display: inline-block;
     border-radius: 3px;
     width: 200px;
-    height: 50px;
+    height: 200px;
     text-align: right;
+}
+
+.center{
+    border-radius: 3px;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
 }
