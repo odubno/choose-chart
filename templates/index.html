@@ -21,15 +21,23 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
     <center>
-        <form action="{{ url_for('quantitative') }}">
-            <button class="btn btn-primary btn-lg">Quantitative Data</button>
-            <p>Data That Is Expressed As A Number.</p>
-        </form>
-        <br>
-        <form action="{{ url_for('categorical') }}">
-            <button class="btn btn-primary btn-lg" >Categorical Data</button>
-            <p>Data That Cannot Be Expressed As A Number.</p>
-        </form>
+        <div class="sides">
+            <div class="left">
+                <img src="static/img/quantitative.png" alt="quantitative" height="150" width="150">
+                <form action="{{ url_for('quantitative') }}">
+                    <p>Numeric</p>
+                    <button class="btn btn-primary btn-lg">Quantitative Data</button>
+                </form>
+            </div>
+            <br>
+            <div class="right">
+                <img src="static/img/categorical.png" alt="categorical" height="150" width="150">
+                <form action="{{ url_for('categorical') }}">
+                    <p>Non-Numeric</p>
+                    <button class="btn btn-primary btn-lg" >Categorical Data</button>
+                </form>
+            </div>
+        </div>
     </center>
 
 {% endblock %}
