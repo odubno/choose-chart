@@ -20,29 +20,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
 	<center>
-		<h1>Continuous</h1>
-		<div class="sides">
-			<div class="left">
-				<h2>Single Variable</h2>
-				<h5>Histogram</h5>
-				<h5>Density Plot</h5>
-				<h5>Box Plots</h5>
-			</div>
-			<div class="center">
-				<h2>Two Variables</h2>
-				<h5><a href="{{url_for('scatter_plot') }}">Scatter Plot</a></h5>
+		<h1>Parallel Coordinate</h1>
 
-			</div>
-			<div class="right">
-				<h2>Multivariable</h2>
-				<h5><a href="{{url_for('parallel_coordinate') }}">Parallel Coordinate</a></h5>
-				<h5>Mosaic Plot</h5>
-				<h5>Scatter Plot Matrix</h5>
-				<h5>3-D Scatter Plot</h5>
-			</div>
-		</div>
+        <p>6.3: "[Wegman, 1990] suggested that it is possible to identify many different multivariate features in parallel coordinate plots. This can be true in particular applications, but in general the claim is too optimistic. What is definitely true is that having identified outliers, correlations, or clusters with analytic approaches, parallel coordinate plots are very useful for checking the results."</p>
 		<div>
-			<form action="{{ url_for('quantitative') }}">
+			<form action="{{ url_for('continuous') }}">
 				<button class="btn btn-primary btn-lg">Back</button>
 			</form>
 		</div>

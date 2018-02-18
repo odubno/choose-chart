@@ -45,6 +45,11 @@ def discrete():
 def scatter_plot():
     return render_template('scatter_plot.html')
 
+@app.route('/parallel_coordinate')
+@nocache
+def parallel_coordinate():
+    return render_template('parallel_coordinate.html')
+
 @app.route('/about')
 @nocache
 def about():
