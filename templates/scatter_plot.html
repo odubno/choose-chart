@@ -1,0 +1,43 @@
+{% extends 'bootstrap/base.html' %}
+
+<!-- Navigation Block -->
+{% block navbar %}
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+                <a class="navbar-brand" href="{{ url_for('about') }}">About</a>
+			</div>
+		</div>
+	</nav>
+{% endblock %}
+
+<!-- Content Block -->
+{% block page_title %} Home About {% endblock %}
+
+<!-- Content -->
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+	<center>
+		<h1>Scatter Plot</h1>
+
+		<h2>Scatter Options:</h2>
+        <h3>Point Size</h3>
+            <p>Small points are hardly seen and big points cover other points making it hard to read the chart.</p>
+            <p>Control the size of the points and make sure it's neigh too large or too small.</p>
+        <h3>Symbols</h3>
+            <p>Use different shapes for different groups when creating a scatter plot.</p>
+            <p> Use your judgement in how many symbols make sense before the plot takes a dive toward looking like a mess.</p>
+        <h3>Alpha-blending</h3>
+            <p>The points are made slightly opaque on a scale of 0 to 1.</p>
+            <p>This allows to see overplotting issues in graphs.</p>
+        <h3>Coloring points</h3>
+            <p>Like "Symbols", "Coloring" also is used to distinguish different categories</p>
+		<div>
+			<form action="{{ url_for('continuous') }}">
+				<button class="btn btn-primary btn-lg">Back</button>
+			</form>
+		</div>
+	</center>
+{% endblock %}

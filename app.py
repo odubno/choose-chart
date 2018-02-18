@@ -40,6 +40,11 @@ def continuous():
 def discrete():
     return render_template('discrete.html')
 
+@app.route('/scatter_plot')
+@nocache
+def scatter_plot():
+    return render_template('scatter_plot.html')
+
 @app.route('/about')
 @nocache
 def about():
