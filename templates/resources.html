@@ -14,21 +14,19 @@
 {% endblock %}
 
 <!-- Content Block -->
-{% block page_title %} Home About Resources {% endblock %}
+{% block page_title %} Home About Resources{% endblock %}
 
 <!-- Content -->
 {% block content %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
-<pre>
-    <code>
-    ```{r}
-    library(GGally)
-    df <- data.frame(state.x77)
-    ggplot(data = df, aes(x=Life.Exp)) +
-      geom_histogram()
-    ```
-    </code>
-</pre>
+		<center>
+			<h1>Resources</h1>
+
+			<ul>https://sebastianbarfort.github.io/sds/slides/lecture3.html#30</ul>
+			<ul>https://www.r-graph-gallery.com/all-graphs/</ul>
+			<ul>https://www.statmethods.net/graphs/index.html</ul>
+			<ul>http://ggplot2.tidyverse.org/reference/</ul>
+		</center>
 
 {% endblock %}

@@ -55,5 +55,10 @@ def parallel_coordinate():
 def about():
     return render_template('about.html')
 
+@app.route('/resources')
+@nocache
+def resources():
+    return render_template('resources.html')
+
 if __name__ == '__main__':
 	app.run(debug=True)
