@@ -69,3 +69,12 @@ pre {
     white-space: pre-wrap;
     background: hsl(30,80%,90%);
 }
+
+.firstdiv {
+    margin-top: 30px;
+}
+
+.seconddiv {
+    height: 500px;
+    margin-top: 65px;
+}
