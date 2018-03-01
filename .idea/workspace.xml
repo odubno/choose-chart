@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ae852f3-0abe-4a28-b86a-0e01522c54cc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/static/css/main.css" afterPath="$PROJECT_DIR$/static/css/main.css" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" afterPath="$PROJECT_DIR$/templates/about.html" />
-      <change beforePath="$PROJECT_DIR$/templates/continuous.html" afterPath="$PROJECT_DIR$/templates/continuous.html" />
-      <change beforePath="$PROJECT_DIR$/templates/discrete.html" afterPath="$PROJECT_DIR$/templates/discrete.html" />
-      <change beforePath="$PROJECT_DIR$/templates/nominal.html" afterPath="$PROJECT_DIR$/templates/nominal.html" />
-      <change beforePath="$PROJECT_DIR$/templates/ordinal.html" afterPath="$PROJECT_DIR$/templates/ordinal.html" />
-      <change beforePath="$PROJECT_DIR$/templates/parallel_coordinate.html" afterPath="$PROJECT_DIR$/templates/parallel_coordinate.html" />
-      <change beforePath="$PROJECT_DIR$/templates/scatter_plot.html" afterPath="$PROJECT_DIR$/templates/scatter_plot.html" />
-    </list>
+    <list default="true" id="6ae852f3-0abe-4a28-b86a-0e01522c54cc" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
