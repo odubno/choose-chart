@@ -42,3 +42,30 @@
     height: 200px;
     display: inline-block;
 }
+
+.tab {
+    margin-left: 200px;
+}
+
+.smalltab {
+    margin-left: 20px;
+}
+
+code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 20px;
+}
+
+.boxes {
+  background-color: #fcfcfc;
+  border: .5px solid #c1c1c1;
+  display: block;
+  padding: 5px;
+}
+
+pre {
+    white-space: pre-wrap;
+    background: hsl(30,80%,90%);
+}
