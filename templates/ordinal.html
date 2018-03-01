@@ -21,16 +21,39 @@
 
 	<center>
 		<h1>Ordinal</h1>
-
-		<h5>Histogram</h5>
-        <h5>Barchart</h5>
-		<h5>Parallel Coordinate</h5>
-		<h5>Mosaic Plot</h5>
-
-		<div>
-			<form action="{{ url_for('categorical') }}">
-				<button class="btn btn-primary btn-lg">Back</button>
-			</form>
+		<div class="center">
+			<div class="boxes">
+				<center>
+					<h5><a href="{{url_for('parallel_coordinate') }}">Histogram</a></h5>
+					<a href="{{url_for('scatter_plot') }}">
+					<img src="static/img/scatter_plot.png" alt="scatter_plot" height="50" width="100">
+					</a>
+				</center>
+			</div>
+			<div class="boxes">
+				<center>
+					<h5><a href="{{url_for('scatter_plot') }}">Bar Chart</a></h5>
+					<a href="{{url_for('scatter_plot') }}">
+					<img src="static/img/scatter_plot.png" alt="scatter_plot" height="50" width="100">
+					</a>
+				</center>
+			</div>
+			<div class="boxes">
+				<center>
+					<h5><a href="{{url_for('scatter_plot') }}">Column Chart</a></h5>
+					<a href="{{url_for('scatter_plot') }}">
+					<img src="static/img/scatter_plot.png" alt="scatter_plot" height="50" width="100">
+					</a>
+				</center>
+			</div>
+			<br>
+			<div>
+				<form action="{{ url_for('categorical') }}">
+					<button class="btn btn-primary btn-lg">Back</button>
+				</form>
+			</div>
+			<!--http://smallbusiness.chron.com/type-chart-used-show-discrete-data-81968.h?-->
 		</div>
+
 	</center>
 {% endblock %}

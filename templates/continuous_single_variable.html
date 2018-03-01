@@ -1,0 +1,33 @@
+{% extends 'bootstrap/base.html' %}
+
+<!-- Navigation Block -->
+{% block navbar %}
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+                <a class="navbar-brand" href="{{ url_for('about') }}">About</a>
+			</div>
+		</div>
+	</nav>
+{% endblock %}
+
+<!-- Content Block -->
+{% block page_title %} Home About {% endblock %}
+
+<!-- Content -->
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+<pre>
+    <code>
+    ```{r}
+    library(GGally)
+    df <- data.frame(state.x77)
+    ggplot(data = df, aes(x=Life.Exp)) +
+      geom_histogram()
+    ```
+    </code>
+</pre>
+
+{% endblock %}
