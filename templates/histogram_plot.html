@@ -1,0 +1,88 @@
+{% extends 'bootstrap/base.html' %}
+
+<!-- Navigation Block -->
+{% block navbar %}
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+                <a class="navbar-brand" href="{{ url_for('about') }}">About</a>
+				<a class="navbar-brand" href="{{ url_for('resources') }}">Resources</a>
+			</div>
+		</div>
+	</nav>
+{% endblock %}
+
+<!-- Content Block -->
+{% block page_title %} Home About Resources {% endblock %}
+
+<!-- Content -->
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+		<center>
+			<h1>Histogram</h1>
+		</center>
+
+		<div class="tab">
+			<h4>Great At:</h4>
+				<div class="smalltab">
+					<h5><li>Shows count, relative frequency, cumulative frequency or density</li></h5>
+					<h5><li>Relative frequency or density is the count and total of each bin summed up to one.</li></h5>
+					<h5><li>Relative frequency: count/total for each bin, sum up to 1.</li></h5>
+					<h5><li>Boundaries may change the shape of the histogram.</li></h5>
+					<h5><li>Boundaries could be right close or right open.</li></h5>
+                    <h5><ul>left-open, right-open: (4, 8) <i>4 < x < 8</i> </ul></h5>
+                    <h5><ul>left-closed, right-open: [4, 8) <i>4 ≤ x < 8</i>  </ul></h5>
+                    <h5><ul>left-open, right-closed: (4, 8] <i>4 < x ≤ 8</i>   </ul></h5>
+                    <h5><ul>left-closed, right-closed: (4, 8] <i>4 ≤ x ≤ 8</i> </ul></h5>
+					<h5><li>Unlike a barchart, histograms have no gaps between intervals.</li></h5>
+					<h5><li>Spotting distribution features</li></h5>
+				</div>
+			<h4>Tips:</h4>
+				<div class="smalltab">
+					<h5><li>Bins</li></h5>
+					<ul>Default is 30. Use binwidth to <i>override</i>.</ul>
+						<ul>Always explore other bin widths and find the best one to showcase your data.</ul>
+						<ul>Good general rule is to use the square root of the number of observations (round up the result).</ul>
+					<h5><li>Rounding</li></h5>
+						<ul>Varying the bin width will help identify rounding errors.</ul>
+						<ul>Gaps in a histogram with small bin widths will indicate rounding patterns.</ul>
+						<ul>Eg. if the shape of the histogram stays the same as bin width is varied, there's rounding errors.</ul>
+					<h5><li>Top Coding</li></h5>
+						<ul>At times, top coded data is in place to keep the anonymity of data.</ul>
+						<ul>The last value has a “+” category to show that values still continue going up.</ul>
+						<ul>There’s a large bin at the end to show that there’s a possibility of a lot more data.</ul>
+						<ul>Top coding is a problem if there's a lot of data being hidden.</ul>
+					<h5><li>Continuous data</li></h5>
+						<ul>Why only use histograms for continuous data?</ul>
+						<ul>The bin width will be an issue when plotting discrete data; the data will be incorrectly binned.</ul>
+					<h5><li>Looking for features:</li></h5>
+						<ul>Asymmetry</ul>
+						<ul>Outliers</ul>
+						<ul>Multimodality</ul>
+						<ul>Gaps</ul>
+						<ul>Heaping / Rounding</ul>
+						<ul>Impossibilities / Errors</ul>
+				</div>
+			</div>
+		<div class="tab">
+			<h3>Code:</h3>
+			<code>
+				library("ggplot2")
+				df <- mtcars
+				ggplot(df, aes(mpg)) +
+				  <ul>geom_histogram(bins=14, color='white', fill='green')</ul>
+			</code>
+		</div>
+		<div class="tab">
+			<img src="static/img/histogram_plot.png" alt="histogram_plot" height="400" width="600">
+		</div>
+		<center>
+			<div>
+				<form action="{{ url_for('continuous') }}">
+					<button class="btn btn-primary btn-lg">Back</button>
+				</form>
+			</div>
+		</center>
+{% endblock %}

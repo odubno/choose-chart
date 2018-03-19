@@ -1,0 +1,74 @@
+{% extends 'bootstrap/base.html' %}
+
+<!-- Navigation Block -->
+{% block navbar %}
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+                <a class="navbar-brand" href="{{ url_for('about') }}">About</a>
+				<a class="navbar-brand" href="{{ url_for('resources') }}">Resources</a>
+			</div>
+		</div>
+	</nav>
+{% endblock %}
+
+<!-- Content Block -->
+{% block page_title %} Home About Resources {% endblock %}
+
+<!-- Content -->
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+		<center>
+			<h1>Scatter Plot Matrix</h1>
+		</center>
+
+		<div class="tab">
+			<h4>Great At:</h4>
+				<div class="smalltab">
+                    <h5><li>Excellent overview of every variable relationship in the dataset.</li></h5>
+					<h5><li>Discovering associations between variables</li></h5>
+					<h5><li>Finding causal Relationships/Correlations between multiple variables at one.</li></h5>
+					<h5><li>Identifing outliers</li></h5>
+					<h5><li>Seeing gaps in data</li></h5>
+					<h5><li>Seeing clusters of groups</li></h5>
+					<h5><li>Spotting distribution features</li></h5>
+				</div>
+			<h4>Tips:</h4>
+				<div class="smalltab">
+					<h5><li>Point Size</li></h5>
+						<ul>Small points are hardly seen and big points cover other points making it hard to read the chart.</ul>
+						<ul>Control the size of the points and make sure it's not too large or too small.</ul>
+					<h5><li>Symbols</li></h5>
+						<ul>Use different shapes for different groups when creating a scatter plot.</ul>
+						<ul> Use your judgement in how many symbols make sense before the plot takes a dive toward looking like a mess.</ul>
+					<h5><li>Alpha-blending</li></h5>
+						<ul>The points are made slightly opaque on a scale of 0 to 1.</ul>
+						<ul>This allows to see overplotting issues in graphs.</ul>
+					<h5><li>Smoothing</li></h5>
+						<ul>Smoothes the scatter plot by fitting a line to the data points</ul>
+					<h5><li>Coloring points</li></h5>
+						<ul>Like "Symbols", "Coloring" also is used to distinguish different categories</ul>
+				</div>
+			</div>
+		<div class="tab">
+			<h3>Code:</h3>
+			<code>
+                <ul>library(ggplot2)</ul>
+                <ul>library(GGally)</ul>
+                <ul>df <- mtcars</ul>
+                <ul>ggpairs(df, columns=1:6, diag=list(continuous="density"), axisLabels="show")</ul>
+			</code>
+		</div>
+		<div class="tab">
+			<img src="static/img/scatter_plot_matrix.png" alt="scatter_plot_matrix" height="400" width="600">
+		</div>
+		<center>
+			<div>
+				<form action="{{ url_for('continuous') }}">
+					<button class="btn btn-primary btn-lg">Back</button>
+				</form>
+			</div>
+		</center>
+{% endblock %}

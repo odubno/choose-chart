@@ -1,0 +1,72 @@
+{% extends 'bootstrap/base.html' %}
+
+<!-- Navigation Block -->
+{% block navbar %}
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+                <a class="navbar-brand" href="{{ url_for('about') }}">About</a>
+				<a class="navbar-brand" href="{{ url_for('resources') }}">Resources</a>
+			</div>
+		</div>
+	</nav>
+{% endblock %}
+
+<!-- Content Block -->
+{% block page_title %} Home About Resources {% endblock %}
+
+<!-- Content -->
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+		<center>
+			<h1>Dot Plot</h1>
+		</center>
+
+		<div class="tab">
+			<h4>Great At:</h4>
+				<div class="smalltab">
+                    <h5><li>A dot over each data value.</li></h5>
+                    <h5><li>Dots are stacked, with each dot representing one observation.</li></h5>
+					<h5><li>Include ALL values from the data set, with one dot for each occurrence of an observed value.</li></h5>
+					<h5><li>Good for gaps, although not for heaping.</li></h5>
+					<h5><li>Poor for large datasets.</li></h5>
+				</div>
+			<h4>Tips:</h4>
+				<div class="smalltab">
+					<h5><li>Bins</li></h5>
+                        <ul>The width of a dot corresponds to the bin width.</ul>
+					    <ul>Default is 30. Use binwidth to <i>override</i>.</ul>
+						<ul>Always explore other bin widths and find the best one to showcase your data.</ul>
+						<ul>Good general rule is to use the square root of the number of observations (round up the result).</ul>
+					<h5><li>Dotsize</li></h5>
+						<ul>The diameter of the dots relative to binwidth, default 1.</ul>
+					<h5><li>Looking for features:</li></h5>
+						<ul>Asymmetry</ul>
+						<ul>Outliers</ul>
+						<ul>Multimodality</ul>
+						<ul>Gaps</ul>
+						<ul>Impossibilities / Errors</ul>
+				</div>
+			</div>
+		<div class="tab">
+			<h3>Code:</h3>
+			<code>
+                library("ggplot2")
+                df <- mtcars
+                ggplot(df, aes(x = mpg)) +
+				  <ul>geom_dotplot(binwidth = 1.5, color='white', fill='red')</ul>
+			</code>
+		</div>
+		<div class="tab">
+			<img src="static/img/dot_plot.png" alt="dot_plot" height="400" width="600">
+		</div>
+		<center>
+			<div>
+				<form action="{{ url_for('continuous') }}">
+					<button class="btn btn-primary btn-lg">Back</button>
+				</form>
+			</div>
+		</center>
+{% endblock %}

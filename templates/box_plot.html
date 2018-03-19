@@ -1,0 +1,93 @@
+{% extends 'bootstrap/base.html' %}
+
+<!-- Navigation Block -->
+{% block navbar %}
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+                <a class="navbar-brand" href="{{ url_for('about') }}">About</a>
+				<a class="navbar-brand" href="{{ url_for('resources') }}">Resources</a>
+			</div>
+		</div>
+	</nav>
+{% endblock %}
+
+<!-- Content Block -->
+{% block page_title %} Home About Resources {% endblock %}
+
+<!-- Content -->
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+		<center>
+			<h1>Box Plot</h1>
+		</center>
+
+		<div class="tab">
+			<h4>Great At:</h4>
+				<div class="smalltab">
+					<h5><li>Great summary of the variable.</li></h5>
+					<h5><li>The line that divides the box into 2 parts represents the median.</li></h5>
+					<h5><li>Display statistical information such as.</li></h5>
+                        <ul>minimum, lower-hinge (lower quartile)</ul>
+                        <ul>median</ul>
+                        <ul>upper-hinge (upper quartile)</ul>
+                        <ul>maximum</ul>
+                        <ul>individual outliers for the data</ul>
+					<h5><li>Extremely useful for identifying outliers, comparing quartiles and for comparisons of distributions across subgroups.</li></h5>
+                    <h5><li>Obscure multimodality. Makes it difficult to identify modes.</li></h5>
+                    <h5><li>Boundaries could be right close or right open.</li></h5>
+                    <h5><ul>left-open, right-open: (4, 8) <i>4 < x < 8</i> </ul></h5>
+                    <h5><ul>left-closed, right-open: [4, 8) <i>4 ≤ x < 8</i>  </ul></h5>
+                    <h5><ul>left-open, right-closed: (4, 8] <i>4 < x ≤ 8</i>   </ul></h5>
+                    <h5><ul>left-closed, right-closed: (4, 8] <i>4 ≤ x ≤ 8</i> </ul></h5>
+					<h5><li>Unlike a barchart, histograms have no gaps between intervals.</li></h5>
+					<h5><li>Spotting distribution features</li></h5>
+				</div>
+
+            <div class="tab">
+                <figure>
+                  <img src="static/img/box_plot_csbsju.png" alt="box_plot_csbsju" width="350" height="400">
+                    <figcaption><i>source - http://www.physics.csbsju.edu/stats/box2.html</i></figcaption>
+                </figure>
+            </div>
+
+			<h4>Tips:</h4>
+				<div class="smalltab">
+					<h5><li>Quartiles</li></h5>
+					    <ul>Reorder the subgroups by median, maximum value or standard deviation rather than initially alphabetical ordering could make boxplots looks nicer.</ul>
+					<h5><li>Outliers</li></h5>
+						<ul>Susptected outliers and outliers are above 3rd quartile and below 1st quartile.</ul>
+						<ul>Outlier are not necessarily bad.</ul>
+						<ul>Eg. if the shape of the histogram stays the same as bin width is varied, there's rounding errors.</ul>
+					<h5><li>Variables</li></h5>
+                        <ul>Use variable width boxplot to show the amount of data in each subplot, while wider box width represents more data.</ul>
+					<h5><li>Multiple Box Plots</li></h5>
+                        <ul>The boxplots are not to be compared with one another, drawing them all together in one plot is primarily a time and space saving exercise.</ul>
+                    <h5><li>Looking for features:</li></h5>
+						<ul>Outliers</ul>
+						<ul>Gaps</ul>
+						<ul>Impossibilities / Errors</ul>
+				</div>
+			</div>
+		<div class="tab">
+			<h3>Code:</h3>
+			<code>
+				library("ggplot2")
+				df <- mtcars
+				ggplot(df, aes(x=as.factor(cyl), y=mpg)) +
+				  <ul>geom_boxplot(fill="slateblue", alpha=0.2) + </ul>
+			</code>
+		</div>
+		<div class="tab">
+			<img src="static/img/box_plot.png" alt="box_plot" height="400" width="600">
+		</div>
+		<center>
+			<div>
+				<form action="{{ url_for('continuous') }}">
+					<button class="btn btn-primary btn-lg">Back</button>
+				</form>
+			</div>
+		</center>
+{% endblock %}

@@ -25,7 +25,9 @@
         <div class="sides">
             <div class="left">
                 <center>
-                    <img src="static/img/nominal.png" alt="quantitative" height="130" width="180">
+                    <a href="{{url_for('nominal') }}">
+                        <img src="static/img/nominal.png" alt="quantitative" height="130" width="180">
+                    </a>
                     <form action="{{ url_for('nominal') }}">
                         <button class="btn btn-primary btn-lg">Nominal Data</button>
                     </form>
@@ -34,7 +36,9 @@
             <br>
             <div class="right">
                 <center>
-                    <img src="static/img/ordinal.png" alt="quantitative" height="130" width="180">
+                    <a href="{{url_for('ordinal') }}">
+                        <img src="static/img/ordinal.png" alt="quantitative" height="130" width="180">
+                    </a>
                     <form action="{{ url_for('ordinal') }}">
                         <button class="btn btn-primary btn-lg">Ordinal Data</button>
                     </form>

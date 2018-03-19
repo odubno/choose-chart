@@ -1,0 +1,74 @@
+{% extends 'bootstrap/base.html' %}
+
+<!-- Navigation Block -->
+{% block navbar %}
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+                <a class="navbar-brand" href="{{ url_for('about') }}">About</a>
+				<a class="navbar-brand" href="{{ url_for('resources') }}">Resources</a>
+			</div>
+		</div>
+	</nav>
+{% endblock %}
+
+<!-- Content Block -->
+{% block page_title %} Home About Resources {% endblock %}
+
+<!-- Content -->
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+		<center>
+			<h1>Bar Chart</h1>
+		</center>
+
+		<div class="tab">
+			<h4>Great At:</h4>
+				<div class="smalltab">
+                    <h5><li>Great a displaying categorial/discrete variables</li></h5>
+                    <h5><li>Has gaps between bars, because the data is not continuous. This being one of the differences between histograms and bar charts.</li></h5>
+				    <h5><li>Area of bar is represented by it's group size.</li></h5>
+                    <h5><li>Give a good relative size of your categories.</li></h5>
+                    <h5><li>Great for opinion polls, questionnaires and surveys.</li></h5>
+                    <h5><li>Barcharts can be used for nominal, ordinal, or discrete variables.</li></h5>
+                    <h5><li>The order of categories affects the way a barchart of a nominal variable looks, and different orderings can emphasise different features</li></h5>
+                </div>
+			<h4>Tips:</h4>
+				<div class="smalltab">
+					<h5><li>Labeling</li></h5>
+					    <ul>Difficult at times.</ul>
+                    <h5><li>Bins</li></h5>
+                        <ul>Does not use it. Does not need it.</ul>
+					<h5><li>Looking for features:</li></h5>
+						<ul>Relationships</ul>
+                        <ul>Patterns</ul>
+                    <h5><li>Top Coding</li></h5>
+						<ul>At times, top coded data is in place to keep the anonymity of data.</ul>
+						<ul>The last value has a “+” category to show that values still continue going up.</ul>
+						<ul>There’s a large bin at the end to show that there’s a possibility of a lot more data.</ul>
+						<ul>Top coding is a problem if there's a lot of data being hidden.</ul>
+				</div>
+			</div>
+		<div class="tab">
+			<h3>Code:</h3>
+			<code>
+                library(ggplot2) <br>
+                ggplot(mpg, aes(class)) + <br>
+                 <ul>geom_bar(aes(fill = drv), position = position_stack(reverse = TRUE)) +</ul>
+                 <ul>coord_flip() +</ul>
+                 <ul>theme(legend.position = "top")</ul>
+			</code>
+		</div>
+		<div class="tab">
+			<img src="static/img/bar_chart.png" alt="bar_chart" height="400" width="600">
+		</div>
+		<center>
+			<div>
+				<form action="{{ url_for('discrete') }}">
+					<button class="btn btn-primary btn-lg">Back</button>
+				</form>
+			</div>
+		</center>
+{% endblock %}

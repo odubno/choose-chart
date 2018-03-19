@@ -25,7 +25,9 @@
         <div class="sides">
             <div class="left">
                 <center>
-                    <img src="static/img/quantitative.png" alt="quantitative" height="150" width="150">
+                    <a href="{{url_for('quantitative') }}">
+                        <img src="static/img/quantitative.png" alt="quantitative" height="150" width="150">
+                    </a>
                     <form action="{{ url_for('quantitative') }}">
                         <p>Numeric</p>
                         <button class="btn btn-primary btn-lg">Quantitative Data</button>
@@ -35,7 +37,9 @@
             <br>
             <div class="right">
                 <center>
-                    <img src="static/img/categorical.png" alt="categorical" height="150" width="150">
+                    <a href="{{url_for('categorical') }}">
+                        <img src="static/img/categorical.png" alt="categorical" height="150" width="150">
+                    </a>
                     <form action="{{ url_for('categorical') }}">
                         <p>Non-Numeric</p>
                         <button class="btn btn-primary btn-lg" >Categorical Data</button>

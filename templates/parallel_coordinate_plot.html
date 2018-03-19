@@ -1,0 +1,86 @@
+{% extends 'bootstrap/base.html' %}
+
+<!-- Navigation Block -->
+{% block navbar %}
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+                <a class="navbar-brand" href="{{ url_for('about') }}">About</a>
+				<a class="navbar-brand" href="{{ url_for('resources') }}">Resources</a>
+			</div>
+		</div>
+	</nav>
+{% endblock %}
+
+<!-- Content Block -->
+{% block page_title %} Home About Resources {% endblock %}
+
+<!-- Content -->
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+		<center>
+			<h1>Parallel Coordinate Plot</h1>
+		</center>
+
+		<div class="tab">
+			<h4>Great At:</h4>
+				<div class="smalltab">
+					<h5><li>Parallel coordinate plots are a powerful way to display multivariate data.</li></h5>
+					<h5><li>All axes are parallel to one another,</li></h5>
+					<h5><li>Each variable has its own line and is scaled from the minimum to the maximum data values.</li></h5>
+					<h5><li>Really effective, if plot is interactive.</li></h5>
+					<h5><li>Helpful in identifying clusters and variables with common patterns.</li></h5>
+                    <h5><ul>Great a displaying time series data for multiple variables.</ul></h5>
+				</div>
+			<h4>Tips:</h4>
+				<div class="smalltab">
+					<h5><li>Normalize/Standardise</li></h5>
+						<ul>If variables vary in the scale of data, normalize or standardize the data before plotting.</ul>
+					<h5><li>Alpha-blending</li></h5>
+						<ul>PCP suffers from overplotting and alpha blending could be used to see overplotting issues in the graph.</ul>
+						<ul>The lines are made slightly opaque on a scale of 0 to 1.</ul>
+					<h5><li>Spline</li></h5>
+						<ul>Multiple variables could have the same value, making it hard to see paths and patterns.</ul>
+						<ul>Spline could be used to fix this, but will still suff from labeling issues.</ul>
+					<h5><li>Smoothers</li></h5>
+						<ul>Could be used to estimate true value as a weighted average of neighboring data.</ul>
+						<ul>The bin width will be an issue when plotting discrete data; the data will be incorrectly binned.</ul>
+					<h5><li>Gaps</li></h5>
+						<ul>If gaps exist, add some data to smooth it out.</ul>
+						<ul>Leave the gaps to show inconsistency in data.</ul>
+					<h5><li>Scale</li></h5>
+						<ul>PCP has built in ways to normalize and standardize the data.</ul>
+						<li>std; robust, unimax, gloablminmax, center, centerObs</li>
+					<h5><li>Missing</li></h5>
+						<ul>Ways to treat outliers in the data:</ul>
+						<li>Exclue it; Use mean, median or random.</li>
+					<h5><li>Looking for features:</li></h5>
+						<ul>Outliers</ul>
+						<ul>Patterns</ul>
+						<ul>Gaps</ul>
+						<ul>Clusters</ul>
+						<ul>Separated Groups</ul>
+				</div>
+			</div>
+		<div class="tab">
+			<h3>Code:</h3>
+			<code>
+				<ul>library(ggplot2)</ul>
+				<ul>library(GGally)</ul>
+				<ul>df <- mtcars</ul>
+				<ul>ggparcoord(df, columns = c(1:7), groupColumn = "cyl", alphaLines = .4)</ul>
+			</code>
+		</div>
+		<div class="tab">
+			<img src="static/img/parallel_coordinate_plot.png" alt="parallel_coordinate_plot" height="400" width="600">
+		</div>
+		<center>
+			<div>
+				<form action="{{ url_for('continuous') }}">
+					<button class="btn btn-primary btn-lg">Back</button>
+				</form>
+			</div>
+		</center>
+{% endblock %}

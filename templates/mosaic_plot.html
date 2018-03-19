@@ -1,0 +1,64 @@
+{% extends 'bootstrap/base.html' %}
+
+<!-- Navigation Block -->
+{% block navbar %}
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+                <a class="navbar-brand" href="{{ url_for('about') }}">About</a>
+				<a class="navbar-brand" href="{{ url_for('resources') }}">Resources</a>
+			</div>
+		</div>
+	</nav>
+{% endblock %}
+
+<!-- Content Block -->
+{% block page_title %} Home About Resources {% endblock %}
+
+<!-- Content -->
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+		<center>
+			<h1>Mosaic Plot</h1>
+		</center>
+
+		<div class="tab">
+			<h4>Great At:</h4>
+				<div class="smalltab">
+                    <h5><li>Designed to create visualizations of discrete data.</li></h5>
+                    <h5><li>Works well for combinations that are between 4 and 24.</li></h5>
+                    <h5><li>Helpful for displaying raw data and they can also be used to support modelling</li></h5>
+					<h5><li>Variables divided up into rectangles proportional in size to the counts of the combinations they represent</li></h5>
+                    <h5><li>For a limited number of variables with only a few categories, mosaicplots can work well, although they need careful design.</li></h5>
+				</div>
+			<h4>Tips:</h4>
+				<div class="smalltab">
+					<h5><li>Labeling</li></h5>
+					    <ul>Difficult at times.</ul>
+                    <h5><li>Variables</li></h5>
+                        <ul>The first variable following the tilde is dependent, all the other variables are independent.</ul>
+					<h5><li>Looking for features:</li></h5>
+						<ul>Probability</ul>
+				</div>
+			</div>
+		<div class="tab">
+			<h3>Code:</h3>
+			<code>
+                <ul>library(ggplot2)</ul>
+                    <ul>library(GGally)</ul>
+                <ul>mosaicplot(~ gear + carb, data = mtcars, color = 4:5)</ul>
+			</code>
+		</div>
+		<div class="tab">
+			<img src="static/img/mosaic_plot.png" alt="mosaic_plot" height="400" width="600">
+		</div>
+		<center>
+			<div>
+				<form action="{{ url_for('discrete') }}">
+					<button class="btn btn-primary btn-lg">Back</button>
+				</form>
+			</div>
+		</center>
+{% endblock %}

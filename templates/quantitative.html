@@ -26,7 +26,9 @@
         <div class="sides">
             <div class="left">
                 <center>
-                    <img src="static/img/continuous.png" alt="quantitative" height="90" width="150">
+                    <a href="{{url_for('continuous') }}">
+                        <img src="static/img/continuous.png" alt="quantitative" height="90" width="150">
+                    </a>
                     <form action="{{ url_for('continuous') }}">
                         <button class="btn btn-primary btn-lg">Continuous Data</button>
                     </form>
@@ -35,7 +37,9 @@
             <br>
             <div class="right">
                 <center>
-                    <img src="static/img/discrete.png" alt="quantitative" height="90" width="150">
+                    <a href="{{url_for('discrete') }}">
+                        <img src="static/img/discrete.png" alt="quantitative" height="90" width="150">
+                    </a>
                     <form action="{{ url_for('discrete') }}">
                         <button class="btn btn-primary btn-lg">Discrete Data</button>
                     </form>

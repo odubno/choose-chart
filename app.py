@@ -45,10 +45,40 @@ def discrete():
 def scatter_plot():
     return render_template('scatter_plot.html')
 
-@app.route('/parallel_coordinate')
+@app.route('/histogram_plot')
 @nocache
-def parallel_coordinate():
-    return render_template('parallel_coordinate.html')
+def histogram_plot():
+    return render_template('histogram_plot.html')
+
+@app.route('/dot_plot')
+@nocache
+def dot_plot():
+    return render_template('dot_plot.html')
+
+@app.route('/box_plot')
+@nocache
+def box_plot():
+    return render_template('box_plot.html')
+
+@app.route('/parallel_coordinate_plot')
+@nocache
+def parallel_coordinate_plot():
+    return render_template('parallel_coordinate_plot.html')
+
+@app.route('/scatter_plot_matrix')
+@nocache
+def scatter_plot_matrix():
+    return render_template('scatter_plot_matrix.html')
+
+@app.route('/mosaic_plot')
+@nocache
+def mosaic_plot():
+    return render_template('mosaic_plot.html')
+
+@app.route('/bar_chart')
+@nocache
+def bar_chart():
+    return render_template('bar_chart.html')
 
 @app.route('/about')
 @nocache
