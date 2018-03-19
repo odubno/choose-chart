@@ -32,7 +32,7 @@
 					<h5><li>Each variable has its own line and is scaled from the minimum to the maximum data values.</li></h5>
 					<h5><li>Really effective, if plot is interactive.</li></h5>
 					<h5><li>Helpful in identifying clusters and variables with common patterns.</li></h5>
-                    <h5><ul>Great a displaying time series data for multiple variables.</ul></h5>
+                    <h5><li>Great a displaying time series data for multiple variables.</li></h5>
 				</div>
 			<h4>Tips:</h4>
 				<div class="smalltab">
@@ -55,7 +55,7 @@
 						<li>std; robust, unimax, gloablminmax, center, centerObs</li>
 					<h5><li>Missing</li></h5>
 						<ul>Ways to treat outliers in the data:</ul>
-						<li>Exclue it; Use mean, median or random.</li>
+						<ul>Exclude it; Use mean, median or random.</ul>
 					<h5><li>Looking for features:</li></h5>
 						<ul>Outliers</ul>
 						<ul>Patterns</ul>
@@ -67,10 +67,10 @@
 		<div class="tab">
 			<h3>Code:</h3>
 			<code>
-				<ul>library(ggplot2)</ul>
-				<ul>library(GGally)</ul>
-				<ul>df <- mtcars</ul>
-				<ul>ggparcoord(df, columns = c(1:7), groupColumn = "cyl", alphaLines = .4)</ul>
+				library(ggplot2) <br>
+				library(GGally) <br>
+				df <- mtcars <br>
+				ggparcoord(df, columns = c(1:7), groupColumn = "cyl", alphaLines = .4) <br>
 			</code>
 		</div>
 		<div class="tab">

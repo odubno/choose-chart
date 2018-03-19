@@ -37,7 +37,7 @@
                         <ul>individual outliers for the data</ul>
 					<h5><li>Extremely useful for identifying outliers, comparing quartiles and for comparisons of distributions across subgroups.</li></h5>
                     <h5><li>Obscure multimodality. Makes it difficult to identify modes.</li></h5>
-                    <h5><li>Boundaries could be right close or right open.</li></h5>
+                    <h5><li>Boundaries could be right close or right open:</li></h5>
                     <h5><ul>left-open, right-open: (4, 8) <i>4 < x < 8</i> </ul></h5>
                     <h5><ul>left-closed, right-open: [4, 8) <i>4 ≤ x < 8</i>  </ul></h5>
                     <h5><ul>left-open, right-closed: (4, 8] <i>4 < x ≤ 8</i>   </ul></h5>
@@ -74,9 +74,9 @@
 		<div class="tab">
 			<h3>Code:</h3>
 			<code>
-				library("ggplot2")
-				df <- mtcars
-				ggplot(df, aes(x=as.factor(cyl), y=mpg)) +
+				library("ggplot2") <br>
+				df <- mtcars <br>
+				ggplot(df, aes(x=as.factor(cyl), y=mpg)) + <br>
 				  <ul>geom_boxplot(fill="slateblue", alpha=0.2) + </ul>
 			</code>
 		</div>

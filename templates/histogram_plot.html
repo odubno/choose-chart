@@ -31,7 +31,7 @@
 					<h5><li>Relative frequency or density is the count and total of each bin summed up to one.</li></h5>
 					<h5><li>Relative frequency: count/total for each bin, sum up to 1.</li></h5>
 					<h5><li>Boundaries may change the shape of the histogram.</li></h5>
-					<h5><li>Boundaries could be right close or right open.</li></h5>
+					<h5><li>Boundaries could be right close or right open:</li></h5>
                     <h5><ul>left-open, right-open: (4, 8) <i>4 < x < 8</i> </ul></h5>
                     <h5><ul>left-closed, right-open: [4, 8) <i>4 ≤ x < 8</i>  </ul></h5>
                     <h5><ul>left-open, right-closed: (4, 8] <i>4 < x ≤ 8</i>   </ul></h5>
@@ -69,9 +69,9 @@
 		<div class="tab">
 			<h3>Code:</h3>
 			<code>
-				library("ggplot2")
-				df <- mtcars
-				ggplot(df, aes(mpg)) +
+				library("ggplot2") <br>
+				df <- mtcars <br>
+				ggplot(df, aes(mpg)) + <br>
 				  <ul>geom_histogram(bins=14, color='white', fill='green')</ul>
 			</code>
 		</div>
