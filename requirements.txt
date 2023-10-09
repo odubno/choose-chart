@@ -1,10 +1,10 @@
-click==6.7
-dominate==2.3.1
-Flask==0.12.3
-Flask-Bootstrap==3.3.7.1
-gunicorn==19.7.1
-itsdangerous==0.24
-Jinja2==2.10.1
-MarkupSafe==1.0
-visitor==0.1.3
-Werkzeug==0.14.1
+click==8.0.3
+dominate==2.6.0
+Flask==2.1.1
+Flask-Bootstrap==3.3.7.1 (Note: This package might not have changed much)
+gunicorn==20.1.1
+itsdangerous==2.1.0
+Jinja2==3.0.3
+MarkupSafe==2.0.1
+visitor==0.1.3 (This package appears to be the same)
+Werkzeug==2.0.3
